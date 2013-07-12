@@ -13,6 +13,7 @@ install_debian(){
 	unzip g10C5enx.zip
 	if [ $MACHINE_TYPE == "x86_64" ]; then
 		tar xfz cque-de-2.0-5.x86_64.tar.gz
+		echo "Man benötigt noch glibc:i386";
 	else
 		tar xfz cque-de-2.0-5.tar.gz
 	fi
@@ -25,6 +26,7 @@ install_debian(){
 
 install_arch(){
 	if which yaourt &> /dev/null; then
+		yaourt lib32-glibc
 		yaourt canon-cque
 		install_printer
 	else
