@@ -11,7 +11,7 @@ install_debian(){
 	MACHINE_TYPE=`uname -m`
 	wget http://files.canon-europe.com/files/soft44092/software/g136pge_lintgz_32_64_0205.zip
 	unzip g10C5enx.zip
-	if [ $MACHINE_TYPE == "x86_64" ]; then
+	if [ "$MACHINE_TYPE" == "x86_64" ]; then
 		tar xfz cque-de-2.0-5.x86_64.tar.gz
 		echo "Man benötigt noch glibc:i386";
 	else
@@ -20,7 +20,7 @@ install_debian(){
 	sudo mkdir -p /usr/local/share/ppd/canon/
 	sudo mkdir -p /usr/bin
 	sudo cp cque-de-2.0-5/ppd/* /usr/local/share/ppd/canon/
-	sudo cp cque-de-2.0-5/sicgsfilter /usr/bin/
+	sudo cp cque-de-2.0-5/sic* /usr/bin/
 	install_printer
 }
 
